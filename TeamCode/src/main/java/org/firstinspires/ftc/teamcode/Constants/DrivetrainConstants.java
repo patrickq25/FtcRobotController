@@ -10,7 +10,7 @@ public class DrivetrainConstants {
         RobotCentric
     }
 
-    public static final DriveType currentDriveType = DriveType.RobotCentric;
+    public static final DriveType currentDriveType = DriveType.FieldCentric;
 }
 
 

@@ -39,9 +39,17 @@ public class MecanumTestOpmode extends LinearOpMode {
                     driverControls.turn()
             );
 
+
             drivetrain.setSlowMode(driverControls.slowMode());
+            robotTelemetry.add(
+                    "Slow Mode: ",
+                    driverControls.slowMode()
+
+            );
 
             drivetrain.addTelemetry();
+
+
 
             robotTelemetry.update();
 
