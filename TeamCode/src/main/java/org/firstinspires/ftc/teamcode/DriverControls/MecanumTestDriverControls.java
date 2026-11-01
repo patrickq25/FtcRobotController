@@ -23,7 +23,7 @@ public class MecanumTestDriverControls {
     }
 
     public boolean slowMode() {
-        return gamepad.rightBumperWasPressed();
+        return gamepad.right_bumper;
     }
 
 

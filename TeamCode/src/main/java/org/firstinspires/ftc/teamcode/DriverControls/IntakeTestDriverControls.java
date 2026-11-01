@@ -11,8 +11,8 @@ public class IntakeTestDriverControls {
     }
 
     public boolean intakeStart() {
-        return gamepad.leftBumperWasPressed();
+        return gamepad.left_bumper;
     }
-    public boolean intakeReverse() { return gamepad.rightBumperWasPressed();}
+    public boolean intakeReverse() { return gamepad.right_bumper;}
 
 }
