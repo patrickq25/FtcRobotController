@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.Opmodes.Tests;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.teamcode.Constants.IntakeConstants;
 import org.firstinspires.ftc.teamcode.DriverControls.IntakeTestDriverControls;
 import org.firstinspires.ftc.teamcode.DriverControls.MecanumTestDriverControls;
 import org.firstinspires.ftc.teamcode.Hardware.DrivetrainHardware;
@@ -36,9 +37,17 @@ public class IntakeTestOpmode extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            if (intakeTestDriverControls.intakeStart()) intake.startIntake();
-            else if (intakeTestDriverControls.intakeReverse()) intake.reverseIntake();
-            else intake.stopIntake();
+
+
+            if (intakeTestDriverControls.intakeStart()){
+                if (intake.intakeMode == IntakeConstants.IntakeMode.Start) intake.stopIntake();
+                else intake.startIntake();
+            }
+            else if (intakeTestDriverControls.intakeReverse()){
+                if (intake.intakeMode == IntakeConstants.IntakeMode.Reverse) intake.stopIntake();
+                else intake.reverseIntake();
+            }
+
 
             intake.addTelemetry();
 

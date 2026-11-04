@@ -18,6 +18,8 @@ public class Intake {
         intakeFrontMotor = hardware.intakeFrontMotor;
         intakeBackMotor = hardware.intakeBackMotor;
         this.robotTelemetry = robotTelemetry;
+
+        intakeMode = IntakeConstants.IntakeMode.Stop;
     }
 
     public void startIntake(){

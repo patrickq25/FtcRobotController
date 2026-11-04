@@ -23,6 +23,7 @@ public class MecanumDrivetrain {
 
     //For slow mode
 
+    public boolean isSlowMode;
     private double powerScale = DrivetrainConstants.NORMAL_MODE_POWER_SCALE;
 
 
@@ -43,6 +44,8 @@ public class MecanumDrivetrain {
         resetHeading();
         setSlowMode(false);
         setBrakeMode(true);
+
+        isSlowMode = false;
 
     }
 
@@ -90,6 +93,8 @@ public class MecanumDrivetrain {
     }
 
     public void setSlowMode(boolean slowMode){
+
+        isSlowMode = slowMode;
         if (slowMode) setPowerScale(DrivetrainConstants.SLOW_MODE_POWER_SCALE);
         else setPowerScale(DrivetrainConstants.NORMAL_MODE_POWER_SCALE);
     }
