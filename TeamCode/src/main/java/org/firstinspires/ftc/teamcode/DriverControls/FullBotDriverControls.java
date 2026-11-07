@@ -22,8 +22,14 @@ public class FullBotDriverControls {
         return gamepad.right_stick_x;
     }
 
-    public boolean toggleSlowMode() {return gamepad.rightBumperWasPressed();}
+    public boolean toggleSlowMode() {return gamepad.circleWasPressed();}
 
-    public boolean toggleIntake() {return gamepad.leftBumperWasPressed();}
+    public boolean frontIntakeStart() {return gamepad.right_bumper;}
+    public boolean frontIntakeReverse() {return gamepad.left_bumper;}
+
+    public boolean backIntakeStart(){return gamepad.right_trigger_pressed;}
+    public boolean backIntakeReverse(){return gamepad.left_trigger_pressed;}
+
+    public boolean toggleOuttake(){return gamepad.squareWasPressed();}
 
 }

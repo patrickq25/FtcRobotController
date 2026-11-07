@@ -40,12 +40,12 @@ public class IntakeTestOpmode extends LinearOpMode {
 
 
             if (intakeTestDriverControls.intakeStart()){
-                if (intake.intakeMode == IntakeConstants.IntakeMode.Start) intake.stopIntake();
-                else intake.startIntake();
+                if (intake.intakeModeFront == IntakeConstants.IntakeMode.Start) intake.stopIntakeFront();
+                else intake.startIntakeFront();
             }
             else if (intakeTestDriverControls.intakeReverse()){
-                if (intake.intakeMode == IntakeConstants.IntakeMode.Reverse) intake.stopIntake();
-                else intake.reverseIntake();
+                if (intake.intakeModeFront == IntakeConstants.IntakeMode.Reverse) intake.stopIntakeFront();
+                else intake.reverseIntakeFront();
             }
 
 
