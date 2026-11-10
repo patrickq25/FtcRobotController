@@ -83,6 +83,10 @@ public class FullBotTest extends LinearOpMode {
                 outtake.setOuttakeMode(!outtake.outtakeMode);
             }
 
+            if (driverControls.toggleBallSize()){
+                outtake.setNectarMode(!outtake.shootingNectar);
+            }
+
 
 
             intake.addTelemetry();

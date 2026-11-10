@@ -32,4 +32,6 @@ public class FullBotDriverControls {
 
     public boolean toggleOuttake(){return gamepad.squareWasPressed();}
 
+    public boolean toggleBallSize(){return gamepad.triangleWasPressed();}
+
 }

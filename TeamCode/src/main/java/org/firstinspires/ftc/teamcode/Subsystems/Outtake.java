@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.Subsystems;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 
+import org.firstinspires.ftc.teamcode.Constants.OuttakeConstants;
 import org.firstinspires.ftc.teamcode.Hardware.OuttakeHardware;
 import org.firstinspires.ftc.teamcode.Utils.RobotTelemetry;
 
@@ -16,6 +17,7 @@ public class Outtake {
 
     public boolean outtakeMode; //false = stop, true = start
 
+    public boolean shootingNectar;
     public Outtake(OuttakeHardware hardware, RobotTelemetry robotTelemetry){
         outtakeMotor = hardware.outtakeMotor;
         this.robotTelemetry = robotTelemetry;
@@ -29,8 +31,15 @@ public class Outtake {
         else stopOuttake();
     }
 
+    public void setNectarMode(boolean nectar){
+        shootingNectar = nectar;
+        if (outtakeMode) startOuttake();
+    }
+
     public void startOuttake(){
-        outtakeMotor.setPower(1);
+        double currentPower = OuttakeConstants.NECTAR_POWER;
+        if (!shootingNectar) currentPower = OuttakeConstants.POLLEN_POWER;
+        outtakeMotor.setPower(currentPower);
         outtakeMode = true;
     }
     public void stopOuttake(){
@@ -42,6 +51,11 @@ public class Outtake {
         robotTelemetry.add(
                 "Outtake Mode",
                 outtakeMode
+        );
+
+        robotTelemetry.add(
+          "Ball Mode",
+                shootingNectar
         );
     }
 
